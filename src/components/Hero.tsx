@@ -2,8 +2,6 @@ import { useRef } from 'react'
 import type { MouseEvent } from 'react'
 import { usePortfolio } from '../hooks'
 
-// Use the verified GitHub-hosted JPEG as a final fallback so the portrait loads
-// even if Vercel's static public-asset deployment is stale.
 const AVATAR_URL = 'https://raw.githubusercontent.com/jwalapratapsingh1212-sketch/jwala-pratap-singh-portfolio/main/public/avatar.jpeg'
 
 export function Hero(){
@@ -28,5 +26,5 @@ export function Hero(){
       avatarRef.current.style.setProperty('--avatar-ry','0deg')
     }
   }
-  return <section id="home" className="hero"><div className="container hero-grid"><div className="reveal"><div className="eyebrow">{profile.specialization}</div><h1>Hi, I’m <span className="gradient">Jwala.</span></h1><p>{profile.tagline} I’m a {profile.role} from {profile.location}, exploring AI, machine learning and intelligent systems.</p><div className="actions"><a className="btn primary" href="#projects">Explore Work</a><a className="btn" href={`mailto:${profile.social.email}`}>Let’s Connect</a></div></div><div className="avatar-wrap" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}><img ref={avatarRef} className="avatar" src={AVATAR_URL} alt="3D portrait of Jwala Pratap Singh" /></div></div></section>
+  return <section id="home" className="hero"><div className="container hero-grid"><div className="reveal"><div className="eyebrow">{profile.specialization}</div><h1>Hi, I’m <span className="gradient">Jwala.</span></h1><p>{profile.tagline} I’m a {profile.role} from {profile.location}, exploring AI, machine learning and intelligent systems.</p><div className="actions"><a className="btn primary" href="#projects">Explore Work</a><a className="btn" href={`mailto:${profile.social.email}`}>Let’s Connect</a></div></div><div className="avatar-wrap" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}><img ref={avatarRef} className="avatar" style={{mixBlendMode:'screen',filter:'drop-shadow(0 30px 45px rgba(0,0,0,.65))'}} src={AVATAR_URL} alt="3D portrait of Jwala Pratap Singh" /></div></div></section>
 }

@@ -1,5 +1,6 @@
-import { usePortfolio } from '../hooks'
 import { useRef } from 'react'
+import type { MouseEvent } from 'react'
+import { usePortfolio } from '../hooks'
 
 const AVATAR_URL = 'https://github.com/jwalapratapsingh1212-sketch/jwala-pratap-singh-portfolio/raw/refs/heads/main/public/avatar.webp'
 
@@ -7,7 +8,7 @@ export function Hero(){
   const {profile}=usePortfolio()
   const avatarRef=useRef<HTMLImageElement>(null)
 
-  const handleMouseMove=(event: React.MouseEvent<HTMLDivElement>)=>{
+  const handleMouseMove=(event:MouseEvent<HTMLDivElement>)=>{
     const rect=event.currentTarget.getBoundingClientRect()
     const x=(event.clientX-rect.left)/rect.width-.5
     const y=(event.clientY-rect.top)/rect.height-.5

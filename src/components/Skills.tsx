@@ -3,6 +3,7 @@ import { usePortfolio } from '../hooks'
 const logos: Record<string, string> = {
   Python: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
   'Pandas & NumPy': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg',
+  SQL: 'https://cdn.simpleicons.org/mysql',
   'Power BI': 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/powerbi.svg',
   'R Programming': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg',
   'Scikit-learn': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg',
@@ -23,5 +24,5 @@ const fallbackIcons: Record<string, string> = {
 export function Skills(){
   const {skills}=usePortfolio()
   const orderedSkills=[...skills].sort((a,b)=>Number(Boolean(logos[b]))-Number(Boolean(logos[a])))
-  return <section id="skills"><div className="container"><div className="section-kicker">02 / Skills</div><h2 className="section-title">Tools I’m building with.</h2><div className="skills-grid">{orderedSkills.map((skill:string)=>{const logo=logos[skill]; return <div className="skill" key={skill}>{logo ? <img src={logo} alt={`${skill} logo`} className="skill-logo" onError={(e)=>{e.currentTarget.style.display='none'}} /> : <span className="skill-fallback">{fallbackIcons[skill] || '✦'}</span>}<span>{skill}</span></div>})}</div></div></section>
+  return <section id="skills"><div className="container"><div className="section-kicker">02 / Skills</div><h2 className="section-title">Tools I’m building with.</h2><div className="skills-grid">{orderedSkills.map((skill:string)=>{const logo=logos[skill]; return <div className="skill" key={skill}>{logo ? <img src={logo} alt={`${skill} logo`} className="skill-logo" onError={(e)=>{e.currentTarget.style.display='none'}} /> : <span className="skill-fallback">{fallbackIcons[skill] || '✦'}</span>}<span className="skill-name">{skill}</span></div>})}</div></div></section>
 }

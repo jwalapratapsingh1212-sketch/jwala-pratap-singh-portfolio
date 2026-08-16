@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/avatar.png",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/webp"
+        }
+      ]
+    }
+  ]
+}

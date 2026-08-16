@@ -1,0 +1,2 @@
+import { usePortfolio } from '../hooks'
+export function Footer(){const {profile}=usePortfolio();return <footer className="footer"><div className="container footer-inner"><div><strong style={{color:'#fff'}}>Jwala Pratap Singh</strong><div>Data Science · AI · ML</div></div><div>© {new Date().getFullYear()} Jwala Pratap Singh</div><a href={`mailto:${profile.social.email}`}>{profile.social.email}</a></div></footer>}

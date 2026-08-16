@@ -1,0 +1,2 @@
+import { usePortfolio } from '../hooks'
+export function About(){const {profile}=usePortfolio();return <section id="about"><div className="container"><div className="section-head"><div><div className="section-kicker">01 / About</div><h2 className="section-title">A student building toward real-world AI.</h2></div></div><div className="about-grid"><div><div className="section-kicker">CURRENT FOCUS</div><p className="muted">Data Science · Machine Learning · Generative AI · NLP · AI Agents</p></div><p className="muted about-copy">{profile.bio}</p></div></div></section>}

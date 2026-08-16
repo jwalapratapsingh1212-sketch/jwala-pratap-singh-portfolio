@@ -1,0 +1,2 @@
+import { usePortfolio } from '../hooks'
+export function Services(){const {services}=usePortfolio();return <section id="services"><div className="container"><div className="section-kicker">03 / Services</div><h2 className="section-title">What I can build.</h2><div className="services">{services.map((s:any,i:number)=><article className="service" key={s.title}><div className="num">0{i+1}</div><h3>{s.title}</h3><p className="muted">{s.description}</p></article>)}</div></div></section>}

@@ -3,7 +3,8 @@ import type { MouseEvent } from 'react'
 import { usePortfolio } from '../hooks'
 
 // Avatar is stored directly in the Vite public folder.
-const AVATAR_URL = '/WhatsApp Image 2026-08-16 at 8.08.09 PM.jpeg'
+// encodeURI preserves the filename while safely encoding spaces for the deployed URL.
+const AVATAR_URL = encodeURI('/WhatsApp Image 2026-08-16 at 8.08.09 PM.jpeg')
 
 export function Hero(){
   const {profile}=usePortfolio()

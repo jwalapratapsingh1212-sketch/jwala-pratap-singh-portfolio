@@ -2,7 +2,9 @@ import { useRef } from 'react'
 import type { MouseEvent } from 'react'
 import { usePortfolio } from '../hooks'
 
-const AVATAR_URL = '/avatar.jpeg'
+// Use the verified GitHub-hosted JPEG as a final fallback so the portrait loads
+// even if Vercel's static public-asset deployment is stale.
+const AVATAR_URL = 'https://raw.githubusercontent.com/jwalapratapsingh1212-sketch/jwala-pratap-singh-portfolio/main/public/avatar.jpeg'
 
 export function Hero(){
   const {profile}=usePortfolio()

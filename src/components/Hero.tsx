@@ -2,7 +2,8 @@ import { useRef } from 'react'
 import type { MouseEvent } from 'react'
 import { usePortfolio } from '../hooks'
 
-const AVATAR_URL = 'https://github.com/jwalapratapsingh1212-sketch/jwala-pratap-singh-portfolio/raw/refs/heads/main/public/avatar.webp'
+// Vite serves files inside /public from the site root.
+const AVATAR_URL = '/avatar.webp'
 
 export function Hero(){
   const {profile}=usePortfolio()

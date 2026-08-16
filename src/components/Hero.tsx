@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import type { MouseEvent } from 'react'
 import { usePortfolio } from '../hooks'
 
-// Vite serves files inside /public from the site root.
-const AVATAR_URL = '/avatar.webp'
+// Use the GitHub raw asset directly so the avatar is not affected by Vercel public-asset routing/cache issues.
+const AVATAR_URL = 'https://raw.githubusercontent.com/jwalapratapsingh1212-sketch/jwala-pratap-singh-portfolio/main/public/avatar.webp'
 
 export function Hero(){
   const {profile}=usePortfolio()
